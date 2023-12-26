@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+
+int n, p, d, i, a, s, nrDiv;
+
+int main()
+{
+    cin >> n >> p;
+    
+    for(i = 1; i <= n; i ++)
+    {
+        cin >> a;
+        
+        nrDiv = 0;
+        
+        for(d = 1; d * d <= a; d ++)
+        {
+            if(a % d == 0)
+            {
+                nrDiv += 2;
+            }
+            
+            if(d * d == a)
+            {
+                nrDiv --;   
+            }
+        }
+        
+        if(nrDiv >= p)
+        {
+            s += a;
+        }
+    }
+    
+    cout << s;
+
+    return 0;
+}
